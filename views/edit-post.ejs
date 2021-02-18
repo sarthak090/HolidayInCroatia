@@ -1,0 +1,279 @@
+<%- include ./partials/dashHeader%>
+
+    <div class="container">
+        
+        <div class="row">
+           
+            <div class="col-lg-12">
+                <h1>Edit <%= post.title%></h1>
+               
+                    <form class="row"  method="POST" action="/api/hotels/edit/<%= post.id%>?_method=PUT">
+                        <input type="hidden" name="_method" value="put" />
+
+                        <div class="col-lg-6 form-group">
+                                  <label for="exampleFormControlFile1">Add Featured Image</label>
+                                  <input type="text" name="image" value="<%= post.image%>" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                        <div class="col-lg-12 form-group">
+                            <label for="exampleFormControlFile1">Upload Images to Gallery</label>
+                            <textarea class="form-control" name="galleryimg" value="<%= post.galleryimg%>"  rows="3">
+                                <%= post.galleryimg%>
+                            </textarea>
+                            
+                           
+                        </div>
+                        <div class="col-lg-12">
+                            <p>Basic Requirement</p>
+                            <div class="form-group">
+                                <label for="title">Add Title</label>
+                                <input class="form-control form-control-lg" value="<%= post.title%>" id="title" type="text" name="title" required placeholder="">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title">Property Type*
+                                </label>
+                                <select class="form-control form-control-lg"   name="propertyType" data-field-name="property_type" id="property_type">
+                                    <option value="" selected="" id="">Property Type</option>
+                                    <option value="Apartments">Apartments</option>
+                                    <option value="Bungalows">Bungalows</option>
+                                    <option value="Cottages">Cottages</option>
+                                    <option value="Houses">Houses</option>
+                                    <option value="Resort">Resort</option>
+                                    <option value="Villas">Villas</option>
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title">Meals<span>*</span>
+                                </label>
+                                <select class="form-control form-control-lg"  name="meals" data-field-name="meals" >
+                                    <option value="" selected="" id="meals">Meals</option>
+                                    <option value="Breakfast and Dinner">Breakfast and Dinner</option>
+                                    <option value="Breakfast and Lunch">Breakfast and Lunch</option>
+                                    <option value="Breakfast included">Breakfast included</option>
+                                    <option value="Self Catering">Self Catering</option>
+                                </select>
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="title">Facilities
+                                    <span>*</span>
+                                </label>
+                                <div class="checkboxContainer"> <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input  type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Wi-Fi" data-field-name="facilities" >
+                                    Wi-Fi </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Pool" data-field-name="facilities" >
+                                    Pool </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Kitchen" data-field-name="facilities" >
+                                    Kitchen </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Air Conditioner" data-field-name="facilities" >
+                                    Air Conditioner </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Electricity" data-field-name="facilities" >
+                                    Electricity </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Dining Area" data-field-name="facilities" >
+                                    Dining Area </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Heating" data-field-name="facilities" >
+                                    Heating </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Hot Tub" data-field-name="facilities" >
+                                    Hot Tub </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Internet" data-field-name="facilities" >
+                                    Internet </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Suitable for Events" data-field-name="facilities" >
+                                    Suitable for Events </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Garage" data-field-name="facilities" >
+                                    Garage </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Storage" data-field-name="facilities" >
+                                    Storage </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Security" data-field-name="facilities" >
+                                    Security </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Washer or Laundry" data-field-name="facilities" >
+                                    Washer or Laundry </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Gym" data-field-name="facilities" >
+                                    Gym </label>
+                                    </div>
+                                    </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="price">Price per 1 day/night<span>*</span>
+                                </label>
+                                <input type="text " value="<%= post.price%>" name="price" class="form-control-file form-control form-control-lg" id="price">
+                                
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Address<span>*</span>
+                                </label>
+                                <input type="text " value="<%= post.address%>" name="address" class="form-control-file form-control form-control-lg" id="address">
+                            </div>
+                            <div class="form-group">
+                                <label for="ratings">Ratings <span id="rating-value"><%= post.ratings%></span> </label>
+                                <input type="range" name="ratings" min="1" max="5" value="<%= post.ratings%>" class="form-control-range" id="ratings">
+                              </div>
+
+                              <div class="form-group">
+                                <label for="rooms">Rooms<span>*</span>
+                                </label>
+                                <input type="text " value="<%= post.rooms%>" name="rooms" class="form-control-file form-control form-control-lg" id="rooms">
+                            </div>
+                            <div class="form-group">
+                                <label for="beds"  class=" col-form-label">Beds</label>
+                                
+                                  <input class="form-control" type="text" value="<%= post.beds%>" name="beds" id="beds">
+                            </div>
+                            <div class="form-group">
+                                <label for="bathroom"  class=" col-form-label">Bathroom</label>
+                                
+                                  <input class="form-control" type="text" value="<%= post.bathroom%>" name="bathroom" id="bathroom">
+                            </div>
+                            <div class="form-group">
+                                <label for="guest">Guest<span>*</span>
+                                </label>
+                                <input type="text "  value="<%= post.guest%>" name="guest" class="form-control-file form-control form-control-lg" id="guest">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="size">Size<span>*</span>
+                                </label>
+                                <input type="text " name="size" value="<%= post.size%>" class="form-control-file form-control form-control-lg" id="size">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="example-datetime-local-input"  class=" col-form-label">Check In</label>
+                                <div class="">
+                                  <input class="form-control" type="time" value="<%= post.checkIn%>" name="checkIn" id="example-datetime-local-input">
+                                </div></div>    
+                                
+
+                                <div class="form-group">
+                                    <label for="example-datetime-local-input"  class=" col-form-label">Check Out</label>
+                                    <div class="">
+                                      <input class="form-control" type="time" value="<%= post.checkOut%>" name="checkOut" id="example-datetime-local-input">
+                                    </div></div>
+
+                                    <div class="form-group">
+                                        <label for="exert">Exert</label>
+                                        <textarea class="form-control"  name="exert" id="exert" rows="8"><%= post.exert%></textarea>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="video">Video<span>*</span>
+                                        </label>
+                                        <input type="text " value="<%= post.video%>" name="video" class="form-control-file form-control form-control-lg" id="video">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="metaDescription">Meta Description</label>
+                    
+                                            <textarea class="form-control" name="metaDescription" rows="8"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn  btn-block btn-primary">Submit</button>
+
+
+                        </div>
+                       
+                    </form>
+                    <div class="col-lg-6">
+
+                    </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let gh= "<%= post.facilites%>"
+        var facilites=  gh.split(',')
+        //  console.log(facilites.match())
+        let cb= document.getElementsByName('facilities[]')
+        
+        for(var i=0; i<15; i++){
+        //    if(cb[i].value == facilites[i]){
+         facilites.find(fc=>{
+            if(fc==cb[i].value){
+                cb[i].checked=true
+            }
+        })
+        
+               
+        //        cb[i].checked=true
+        //    }
+        }
+        const range = document.getElementById("ratings")
+        range.addEventListener('change',(d)=>{
+            
+            document.getElementById("rating-value").innerHTML=d.target.value
+        })
+
+        const ppty = "<%= post.propertyType%>"
+        
+        //const propertyType=ppty.slice(",")
+        const propEl = document.getElementsByName("propertyType")
+        if(ppty.length>0){
+         propEl[0].value=ppty
+
+        }
+        function displayMeal(){
+            const mealElement = document.getElementsByName("meals")
+             const meal = "<%= post.meals%>"
+            if(meal.length>0){
+                mealElement[0].value=meal
+             console.log(meal.length, mealElement[0][0].value)
+
+               
+            }
+            
+        }
+        displayMeal()
+
+        
+        
+    </script>
+<%- include ./partials/dashFooter%>

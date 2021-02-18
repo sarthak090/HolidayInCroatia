@@ -1,0 +1,177 @@
+
+<%- include ./partials/header%>
+
+    <br><br><br><br>
+    
+    <a href="/api/hotels/edit/<%= post._id%>" class="btn btn-warning">Edit</a>
+    <a href="/api/hotels/delete/<%= post._id%>" class="btn btn-danger">Delete</a>
+       <br><br><br><br>
+       <div class="row">
+           <div class="col-lg-12">
+               <div class="title-wrapper">
+                   <div class="text-muted"><%= post.address%></div>
+                   <div class="hotel-name"><%= post.title%></div>
+                   <div class="ratings">★★★★★</div>
+               </div>
+               <div class="row feature-wrapper" id="">
+                   <div class="col-lg-3 col-xs-6 col-md-6 col-sm-6 single-feature ">
+                       <span class="feature-desc text-uppercase">Type</span>
+                       <p class="single-feature-desc">
+                       <i class="fas fa-home"></i>Apartments
+
+                       </p>
+                    </div>
+                   <div class="col-lg-3 col-xs-6 col-md-6 col-sm-6 single-feature ">
+                    <span class="feature-desc text-uppercase">Bedroom</span>
+                       <p class="single-feature-desc"><i class="fas fa-bed"></i><%= post.rooms%> Bedrooms</p></div>
+                   <div class="col-lg-3 col-xs-6 col-md-6 col-sm-6 single-feature ">
+                    <span class="feature-desc text-uppercase"> Bathroom</span>
+                       <p class="single-feature-desc">
+                         <i class="fas fa-bath"></i> <%= post.bathroom%> Full
+
+                       </p>
+                    
+                    </div>
+                   <div class="col-lg-3 col-xs-6 col-md-6 col-sm-6 single-feature ">
+                    <span class="feature-desc text-uppercase">Guest</span>
+                       <p class="single-feature-desc">
+                        <i class="fas fa-user-friends"></i>
+                        <%= post.guest%> Guest
+                       </p>
+                   </div>
+               </div>
+
+               <div class="row hotel-description">
+                   <p class="title">Description</p>
+                   <p><%= post.content%></p>
+               </div> 
+               <div class="detail-wrapper row">
+                    <div class="col-lg-4">
+                    <span class="feature-title">
+
+                        <p>Detail</p></span>
+                    </div>
+                    <div class="row col-lg-8 highlight">
+                        <span class="col-lg-6 col-sm-6 col-xs-6 single-detail">
+                            <i class="fas fa-user-friends"></i>Guest: <%= post.guest%>
+                        </span>
+                        <span class="col-lg-6 col-sm-6 col-xs-6 single-detail">
+                            <i class="fas fa-user-friends"></i>Bedroom: <%= post.rooms%>
+                        </span>
+                        <span class="col-lg-6 col-sm-6 col-xs-6 single-detail">
+                            <i class="fas fa-user-friends"></i>Beds: <%= post.beds%>
+                        </span>
+                        <span class="col-lg-6 col-sm-6 col-xs-6 single-detail">
+                            <i class="fas fa-user-friends"></i>Bathroom: <%= post.bathroom%>
+                        </span>
+                        <span class="col-lg-6 col-sm-6 col-xs-6 single-detail">
+                            <i class="fas fa-user-friends"></i>Check in After: <%= post.checkIn%>
+                        </span>
+                        <span class="col-lg-6 col-sm-6 col-xs-6 single-detail">
+                            <i class="fas fa-user-friends"></i>Type: 4
+                        </span>
+                        <span class="col-lg-6 col-sm-6 col-xs-6 single-detail">
+                            <i class="fas fa-user-friends"></i>Size: <%= post.size%> sqft
+                        </span>
+                        
+                    </div>
+
+               </div>
+               <div class="gallery-wrapper row">
+
+               </div>
+               
+               <div class="detail-wrapper row">
+                <div class="col-lg-4">
+                    <span class="feature-title">
+
+                    <p>Facilites</p></span>
+                </div>
+                <div class="row col-lg-8">
+                    <%if(post.facilites !== null && post.facilites.length>0){ post.facilites.forEach(function(fac){%>
+                        <span class="col-lg-6 col-sm-6 col-xs-6 single-detail">
+                         
+                           <%= fac%>
+                        </span>
+                        <%})}%>  
+                    
+                   
+                    
+                                        </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                    <span class="feature-title">
+                        Term And Rules
+                    </span>
+                       
+                    </div>
+                    <div class="col-lg-8 row">
+                        <div class="col-lg-12 timing">
+                            <p><span class="feature-title">Timing</span><br/>
+                                <span class="feature-description">
+                                Check In <span class="timing-span text-right">After <%= post.checkIn%></span>
+
+                                </span>
+                                <br>
+
+                               <span class="feature-description">
+                                Check Out <span class="timing-span"><%= post.checkOut%></span>
+                               </span> 
+                            </p>
+                        </div>
+                        
+                        <div class="col-lg-12 cancel">
+                            <p><span class="feature-title">
+                                Cancel /Prepayment<br>
+                            </span>
+                                <span class="feature-description">
+                                   Cancellation and prepayment policies vary by type of option. Please enter the dates of your stay and read the reservation conditions for the required room.
+
+                                </span>
+
+                            </p>
+                        </div>
+
+                        <div class="col-lg-12 age-limit">
+                            
+                            
+                            <p> <span class="feature-title">Age Limit</span><br>   
+                                <span class="feature-description">
+
+                                There are no age restrictions for arrival</span>
+                            </p>
+                        </div>
+                        <div class="col-lg-12 pets">
+                            <p><span class="feature-title">Pets</span><br>  
+                                <span class="feature-description">
+
+                                Pets are NOT allowed.</span>
+
+
+                            </p>
+                        </div>
+                        <div class="col-lg-12">
+                            <p><span class="feature-title">Cards accepted </span><br>
+                                <span class="feature-description">
+
+                                Accepts these cards and reserves the right to pre-block funds on the card before your arrival.
+                                    </span>
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                    <span class="feature-title">
+                        Villa Tour</span></div>
+                    <div class="col-lg-8">
+                        <iframe width="389" height="219" src="https://www.youtube.com/embed/Qk-0KIM5aSI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+           </div>
+           
+       </div>
+       <%- include ./partials/footer%>

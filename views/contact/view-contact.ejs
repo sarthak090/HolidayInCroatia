@@ -1,0 +1,37 @@
+<%- include ../partials/dashHeader%>
+    <div class="row">
+        
+            
+                <% post.forEach(function(contact){%>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <strong>  Check In:</strong><%= contact.checkIn%>
+                                <br>
+                                <strong> Check Out: </strong><%= contact.checkOut%>
+                                <br>
+
+                                <strong> Guest: </strong><%= contact.guest%>
+                       <br>
+
+                       <strong> Username: </strong><%= contact.author.username%>
+                       <br>
+
+                       <strong>Hotel :</strong> <%= contact.hotel.title%>
+                       <br>
+
+                       <strong>Message :</strong> <%= contact.hotel.data%>
+                       <br>
+                    <a href="/api/order/contact/delete/<%= contact._id%>" class="btn btn-outline-danger">Delete</a>
+
+                            </div>
+                            
+                        </div>
+                    <br>
+
+                    </div>
+                <%})%>
+            
+        
+    </div>
+<%- include ../partials/dashFooter%>

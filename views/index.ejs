@@ -1,0 +1,27 @@
+<%- include ./partials/header%>
+
+    <br><br><br><br>
+    <div class="row">
+        <% posts.forEach(function(post){%>
+            <div class="col-lg-4 ">
+                <div class="card" style="width: 18rem;">
+                    <img src="<%= post.image%>" class="card-img-top" alt="<%= post.title%>">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= post.title%></h5>
+                      <p class="card-text"></p>
+                      <a href="/api/hotels/view/<%= post._id%>" class="btn btn-primary">View</a>
+                      <% if(user){%>
+                        <a href="/api/hotels/edit/<%= post._id%>" class="btn btn-warning">Edit</a>
+                         <a href="/api/hotels/delete/<%= post._id%>" class="btn btn-danger">Delete</a>
+                      <%}%>  
+                      
+                    </div>
+                  </div>
+
+                
+            </div>
+            
+        <%})%>
+       
+    </div>
+    <%- include ./partials/footer%>

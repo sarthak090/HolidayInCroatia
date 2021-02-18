@@ -1,0 +1,203 @@
+<%- include ./partials/dashHeader %>
+
+        <%if(!user){%>
+            <center>Plz <a href="/users/login">Login</a>  To Add</center>
+            <%}%>
+
+        <div class="row container-fluid">
+           
+            <div class="col-lg-12">
+                <h1>Add New Property
+                </h1>
+               
+                    <form class="row" method="POST" action="">
+                        <div class="col-lg-6 form-group">
+                                  <label for="exampleFormControlFile1">Add Featured Image</label>
+                                  <input type="text" name="image" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                        <div class="col-lg-6 form-group">
+                            <label for="exampleFormControlFile1">Upload Images to Gallery</label>
+                            <textarea class="form-control" name="galleryimg" id="exert" rows="3"></textarea>
+                            
+                           
+                        </div>
+                        <div class="col-lg-12">
+                            <p>Basic Requirement</p>
+                            <div class="form-group">
+                                <label for="title">Add Title</label>
+                                <input class="form-control form-control-lg" id="title" type="text" name="title" required placeholder="">
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title">Property Type*
+                                </label>
+                                <select class="form-control form-control-lg"  name="property_type" data-field-name="property_type" id="property_type"><option value="" selected="">Property Type</option><option value="Apartments">Apartments</option><option value="Bungalows">Bungalows</option><option value="7">Cottages</option><option value="Houses">Houses</option><option value="Resort">Resort</option><option value="Villas">Villas</option></select>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="title">Meals<span>*</span>
+                                </label>
+                                <select class="form-control form-control-lg"  name="meals" data-field-name="meals" id="meals"><option value="" selected="">Meals</option><option value="Breakfast and Dinner">Breakfast and Dinner</option><option value="Breakfast and Lunch">Breakfast and Lunch</option><option value="Breakfast included">Breakfast included</option><option value="Self Catering">Self Catering</option></select>
+
+                            </div>
+
+                            <div class="form-group ">
+                                <label for="title">Facilities
+                                    <span>*</span>
+                                </label>
+                                <div class="checkboxContainer"> <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Wi-Fi" data-field-name="facilities" >
+                                    Wi-Fi </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Pool" data-field-name="facilities" >
+                                    Pool </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Kitchen" data-field-name="facilities" >
+                                    Kitchen </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Air Conditioner" data-field-name="facilities" >
+                                    Air Conditioner </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Electricity" data-field-name="facilities" >
+                                    Electricity </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Dining Area" data-field-name="facilities" >
+                                    Dining Area </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Heating" data-field-name="facilities" >
+                                    Heating </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Hot Tub" data-field-name="facilities" >
+                                    Hot Tub </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Internet" data-field-name="facilities" >
+                                    Internet </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Suitable for Events" data-field-name="facilities" >
+                                    Suitable for Events </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Garage" data-field-name="facilities" >
+                                    Garage </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Storage" data-field-name="facilities" >
+                                    Storage </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Security" data-field-name="facilities" >
+                                    Security </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Washer or Laundry" data-field-name="facilities" >
+                                    Washer or Laundry </label>
+                                    </div>
+                                    <div class="checkboxitem">
+                                    <label class="jet-form__field-label">
+                                    <input type="checkbox" name="facilities[]" class="jet-form__field checkboxes-field checkradio-field checkboxes-group-required" value="Gym" data-field-name="facilities" >
+                                    Gym </label>
+                                    </div>
+                                    </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="price">Price per 1 day/night<span>*</span>
+                                </label>
+                                <input type="text " name="price" class="form-control-file form-control form-control-lg" id="price">
+                                
+
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Address<span>*</span>
+                                </label>
+                                <input type="text " name="address" class="form-control-file form-control form-control-lg" id="address">
+                            </div>
+                            <div class="form-group">
+                                <label for="ratings">Ratings</label>
+                                <input type="range" name="ratings" min="1" max="5" class="form-control-range" id="ratings">
+                              </div>
+
+                              <div class="form-group">
+                                <label for="rooms">Rooms<span>*</span>
+                                </label>
+                                <input type="text " name="rooms" class="form-control-file form-control form-control-lg" id="rooms">
+                            </div>
+                            <div class="form-group">
+                                <label for="guest">Guest<span>*</span>
+                                </label>
+                                <input type="text " name="guest" class="form-control-file form-control form-control-lg" id="guest">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="size">Size<span>*</span>
+                                </label>
+                                <input type="text " name="size" class="form-control-file form-control form-control-lg" id="size">
+                            </div>
+                            <div class="form-group">
+                                <label for="example-datetime-local-input"  class=" col-form-label">Check In</label>
+                                <div class="">
+                                  <input class="form-control" type="time" name="chechkIn" id="example-datetime-local-input">
+                                </div></div>
+
+                                <div class="form-group">
+                                    <label for="example-datetime-local-input" class=" col-form-label">Check Out</label>
+                                    <div class="">
+                                      <input class="form-control" type="time" name="chechkOut" id="example-datetime-local-input">
+                                    </div></div>
+
+                                    <div class="form-group">
+                                        <label for="exert">Exert</label>
+                                        <textarea class="form-control" name="exert" id="exert" rows="3"></textarea>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="video">Video<span>*</span>
+                                        </label>
+                                        <input type="text " name="video" class="form-control-file form-control form-control-lg" id="video">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="metaDescription">Meta Description</label>
+                    
+                                            <textarea class="form-control" name="metaDescription" rows="8"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn  btn-block btn-primary">Submit</button>
+
+
+                        </div>
+                       
+                    </form>
+                    <div class="col-lg-6">
+
+                    </div>
+                
+
+            </div>
+        </div>
+        <%- include ./partials/dashFooter %>
